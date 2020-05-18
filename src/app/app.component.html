@@ -1,4 +1,18 @@
-<hello name="{{ name }}"></hello>
-<p>
-  Start editing to see some magic happen :)
-</p>
+<div class="container d-flex flex-wrap justify-content-center">
+  <ng-container *ngTemplateOutlet="imgTemp; context: listImg.img"></ng-container>
+</div>
+
+
+<ng-template #imgTemp let-src="src">
+	<ng-container *ngFor="let item of src">
+			<div class="card m-3" style="width: 18rem;">
+				<img [src]="item" class="card-img-top">
+				<div class="card-body">
+					<h5 class="card-title">Название карточки</h5>
+					<p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+						card's content.</p>
+					<a href="#" class="btn btn-secondary">Переход куда-нибудь</a>
+				</div>
+			</div>
+	</ng-container>
+</ng-template>
